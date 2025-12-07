@@ -1,0 +1,61 @@
+📧 Suggested Prompt for Claude (or another LLM/Automation Tool)
+Since you want to use Claude, here is a detailed prompt you could adapt and feed into an AI tool that does have permission to interact with your email data (e.g., via an API or an integrated platform).
+
+"I need you to process the emails in my inbox related to my campaign for AZ Corporation Commissioner. Focus specifically on emails that are event invitations, notices about political events (debates, forums, town halls, candidate trainings, meetings), or opportunities to speak/attend.
+
+Task 1: Identify and Flag
+
+Identify all emails that fall under the criteria above.
+
+Flag these emails with the tag: AZCorpComm_Event.
+
+Task 2: Calendar Integration
+
+For every identified email, extract the Event Name, Date, Time, and Location (if available).
+
+Add a new entry to my calendar with this information. The event description should include a link back to the original email.
+
+Task 3: Draft Replies
+
+For events that have NOT yet occurred: Draft a reply to the sender (or the registration email) asking to confirm if it is too late to register or if there's any necessary pre-event step I need to take. Use a polite and professional tone.
+
+For events that HAVE already occurred (past date/time): Draft an apology email to the sender. State that I apologize for missing the event, and then ask if there is a future, similar opportunity to participate (e.g., 'Is there another Corporation Commission Debate planned?', 'Will there be another LD12 Blue Bingo Bash?', 'Are there plans for another candidate forum?')."
+
+🔎 Reviewing Your Current Screen
+Looking at the emails you are currently viewing, here are a few that match your criteria for being campaign-related events/opportunities:
+
+Qualifying for the Ballot (Today, from Ballot Time LLC) - Offers services for a core campaign activity.
+
+WUAA Annual Meeting Invitation (Wednesday, from Kelly Hauert) - An invitation, likely a networking or speaking opportunity.
+
+Coperation Commision Forum (11/29/2025, from George McGaughey) - Directly related to your campaign role.
+
+You’re Invited – Inaugural Lunch in Honor of Our New Council Members (11/21/2025, from Alex Kack) - Political invitation/networking.
+
+Invitation to College Dems Event (11/14/2025, from Alex Kack) - Political invitation.
+
+Corporation Commission Candidate Forum (11/11/2025, from Cathy Ransom) - Directly related to your campaign role.
+
+Speak to Black Mountain Dems and Friends (11/3/2025, from andreadgn8@icloud.com) - Speaking engagement opportunity.
+
+Invitation to join candidate panel (10/31/2025, from Diane McMahan) - Speaking/participation opportunity.
+
+Opportunity for Candidates & Elected Officials (10/16/2025, from Alex Kack) - General candidate opportunity.
+
+PROMOTE YOUR CANDIDACY- LD12 BLUE BINGO BASH October 24th @ 6PM (10/14/2025, from Marion Weich) - Campaign promotion opportunity.
+
+Tabling Opportunity at Halloween Voter Engagement Fair (10/6/2025, from Alex Kack) - Campaign activity.
+
+Corperation Commission Debate (10/2/2025, from Derrick and George McGaughey) - Directly related to your campaign role.
+
+Speaking engagement (10/1/2025, from Clay Latimer) - Speaking opportunity.
+
+Invitation for AFSCME Endorsement Interview (9/30/2025, from John Bower) - Campaign endorsement process.
+
+Chicano Vibez Tabling Info (9/17/2025, from Alex Kack) - Campaign activity.
+
+Invitation to present to PCDP Executive Committee (9/8/2025, from Alex Kack and Derrick) - Speaking opportunity.
+
+Candidate Invite to participate in LD18 Board Game Night (9/5/2025, from Alex Kack) - Political invitation/networking.
+
+Would you like me to draft a more specific reply for any of those past events, such as the Corporation Commission Debate from 10/2/2025, based on the apology/future opportunity template?
