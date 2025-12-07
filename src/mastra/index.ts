@@ -10,54 +10,14 @@ import { z } from "zod";
 import { sharedPostgresStorage } from "./storage";
 import { inngest, inngestServe } from "./inngest";
 
-// ======================================================================
-// Option 1: FOR TIME-BASED (CRON) TRIGGERS
-// ======================================================================
-// Call registerCronTrigger() BEFORE the Mastra initialization below.
-//
-// Example:
-//   import { registerCronTrigger } from "../triggers/cronTriggers";
-//   import { myWorkflow } from "./workflows/myWorkflow";
-//
-//   registerCronTrigger({
-//     cronExpression: "0 8 * * *", // Daily at 8 AM
-//     workflow: myWorkflow
-//   });
-//
-// See src/triggers/cronTriggers.ts for details
-// ======================================================================
-// Option 2: FOR WEBHOOK-BASED TRIGGERS
-// ======================================================================
-// Spread trigger registration functions into this apiRoutes array.
-//
-// Pattern:
-//   import { registerYourTrigger } from "../triggers/yourTriggers";
-//   import { myWorkflow } from "./workflows/myWorkflow";
-//
-//   ...registerYourTrigger({
-//     triggerType: "your/event.type",
-//     handler: async (mastra, triggerInfo) => {
-//       const run = await myWorkflow.createRunAsync();
-//       return await run.start({ inputData: { /* your data */ } });
-//     }
-//   })
-//
-// Available: src/triggers/slackTriggers.ts, telegramTriggers.ts, exampleConnectorTrigger.ts
-// ======================================================================
+import { registerCronTrigger } from "../triggers/cronTriggers";
+import { campaignEmailAgent } from "./agents/campaignEmailAgent";
+import { campaignEmailWorkflow } from "./workflows/campaignEmailWorkflow";
 
-// ======================================================================
-// IMPORT YOUR AGENTS AND WORKFLOWS
-// ======================================================================
-// Import your custom agents and workflows here.
-// See src/examples/ directory for complete examples:
-// - src/examples/exampleAgent.ts
-// - src/examples/exampleWorkflow.ts
-// - src/examples/exampleTool.ts
-//
-// Example imports:
-// import { myAgent } from "./agents/myAgent";
-// import { myWorkflow } from "./workflows/myWorkflow";
-// ======================================================================
+registerCronTrigger({
+  cronExpression: process.env.SCHEDULE_CRON_EXPRESSION || "0 8 * * *",
+  workflow: campaignEmailWorkflow,
+});
 
 class ProductionPinoLogger extends MastraLogger {
   protected logger: pino.Logger;
@@ -102,10 +62,8 @@ class ProductionPinoLogger extends MastraLogger {
 
 export const mastra = new Mastra({
   storage: sharedPostgresStorage,
-  // Register your workflows here
-  workflows: {},
-  // Register your agents here
-  agents: {},
+  workflows: { campaignEmailWorkflow },
+  agents: { campaignEmailAgent },
   mcpServers: {
     allTools: new MCPServer({
       name: "allTools",
